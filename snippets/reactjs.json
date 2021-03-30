@@ -1,0 +1,222 @@
+{
+    "JSX_import_react": {
+        "prefix": "imr",
+        "body": [
+            "import React from 'react';"
+        ]
+    },
+    "JSX_import_with_modul": {
+        "prefix": "im",
+        "body": [
+            "import $1 from '$0';"
+        ]
+    },
+    "JSX_import_with_modul_with_skopes": {
+        "prefix": "imp",
+        "body": [
+            "import { $0 } from '$1';"
+        ]
+    },
+    "JSX_import_all": {
+        "prefix": "impa",
+        "body": [
+            "import React, { useState, useEffect, useMemo, memo, lazy, Suspense } from 'react';"
+        ]
+    },
+    "JSX_import_router_dom": {
+        "prefix": "imrout",
+        "body": [
+            "import { Route, Switch, NavLink, Link } from 'react-router-dom';"
+        ]
+    },
+    "JSX_import_react_redux": {
+        "prefix": "imredux",
+        "body": [
+            "import { useSelector, useDispatch } from 'react-redux';"
+        ]
+    },
+    "JSX_import_prop_types": {
+        "prefix": "imty",
+        "body": [
+            "import PropTypes from 'prop-types';"
+        ]
+    },
+    "JSX_import_axios": {
+        "prefix": "ima",
+        "body": [
+            "import axios from 'axios';"
+        ]
+    },
+    "JSX_dispatch": {
+        "prefix": "dispatch",
+        "body": [
+            "const dispatch = useDispatch();"
+        ]
+    },
+    "JSX_dispatch_useing": {
+        "prefix": "dis",
+        "body": [
+            "dispatch($0)"
+        ]
+    },
+    "JSX_useEffect": {
+        "prefix": "useEffect",
+        "body": [
+            "useEffect(() => {",
+            "    $0",
+            "}, [$1]);"
+        ]
+    },
+    "JSX_useState": {
+        "prefix": "useState",
+        "body": [
+            "const [$1, set$1] = useState($0);"
+        ]
+    },
+    "JSX_memo": {
+        "prefix": "mo",
+        "body": [
+            "memo($0);"
+        ]
+    },
+    "JSX_useSelector": {
+        "prefix": "useSelector",
+        "body": [
+            "const $1 = useSelector(state => state.Reducer.$0);"
+        ]
+    },
+    "JSX_cfuseMemo": {
+        "prefix": "useMemo",
+        "body": [
+            "const $2 = useMemo(() => {",
+            "    return ($3)=> {",
+            "        $0",
+            "    }",
+            "}, [$1]);"
+        ]
+    },
+    "JSX_return_jsx": {
+        "prefix": "rjsx",
+        "body": [
+            "return (",
+            "    <div>",
+            "        $0",
+            "    </div>",
+            ")"
+        ]
+    },
+    "JSX_mapPrint": {
+        "prefix": "mapPrint",
+        "body": [
+            "{$1.map((elem,i)=> {",
+            "    return (",
+            "        <div key={elem.id}>",
+            "            $0",
+            "        </div>",
+            "    )",
+            "})}"
+        ]
+    },
+    "JSX_map": {
+        "prefix": "map",
+        "body": [
+            "$1.map(elem=> {",
+            "   if (elem.id === $1){",
+            "       $0",
+            "   }",
+            "   return elem",
+            "})"
+        ]
+    },
+    "JSX_export_default": {
+        "prefix": "ex",
+        "body": [
+            "export default $0"
+        ]
+    },
+    "JSX_prevent_default": {
+        "prefix": "epd",
+        "body": [
+            "e.preventDefault();"
+        ]
+    },
+    "JSX_onclick": {
+        "prefix": "onclick",
+        "body": [
+            "onClick={$0}"
+        ]
+    },
+    "JSX_onchange": {
+        "prefix": "onchange",
+        "body": [
+            "onChange={$0}"
+        ]
+    },
+    "JSX_export_rfc": {
+        "prefix": "rfc",
+        "body": [
+            "import React, { useState, useEffect, useMemo, memo } from 'react';",
+            "",
+            "",
+            "function $1 ($2){",
+            "",
+            "    return (",
+            "        <div>",
+            "            $0",
+            "        </div>",
+            "    )",
+            "}",
+
+            "export default $1 = memo($1);"
+        ]
+    },
+    "JSX_React": {
+        "prefix": "react",
+        "body": [
+            "import React, { useState, useEffect, useMemo, memo} from 'react';",
+            "import { Route, Switch, NavLink, Link } from 'react-router-dom';",
+            "import { animateScroll as scroll } from 'react-scroll';",
+            "import { useSelector, useDispatch } from 'react-redux';",
+            "import { action } from '../../redux/actions/action';",
+            "import PropTypes from 'prop-types';",
+            "// import Media from '../../media'; ",
+            "import './container1.scss';",
+            "import axios from 'axios';",
+            "import 'react-scroll';",
+            "",
+            "",
+            "function $1($2) {",
+            "",
+            "    const dispatch = useDispatch();",
+            "    ",
+            "    useEffect(() => {",
+            "            ",
+            "    }, []);",
+            "  ",
+            "    const [state, setState] = useState('');",
+            "",
+            "    const redux = useSelector(state => state.Reducer);",
+            "    ",
+            "    return (",
+            "        <>",
+            "            <section className=''>",
+            "                $0",
+            "            </section>",
+            "        </>",
+            "    )",
+            "}",
+            "",
+            "$1.propTypes ={",
+            "    //state: PropTypes.array,",
+            "  ",
+            "}",
+            "",
+            "export default $1 = memo($1);"
+        ]
+    }
+}
+            
+
+
+
+           

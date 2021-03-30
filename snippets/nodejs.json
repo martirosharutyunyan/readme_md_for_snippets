@@ -1,0 +1,215 @@
+{   
+    "Nodejs_require_":{
+        "prefix": "rq",
+        "body": [
+           "require('$0');"
+        ]
+    },
+    "Nodejs_require":{
+        "prefix": "req",
+        "body": [
+           "const $0 = require('$0');"
+        ]
+    },
+    "Nodejs_require_fs":{
+        "prefix": "fsreq",
+        "body": [
+           "const fs = require('fs');"
+        ]
+    },
+    "Nodejs_require_path":{
+        "prefix": "pathreq",
+        "body": [
+           "const path = require('path');"
+        ]
+    },
+    "Nodejs_require_express":{
+        "prefix": "expressreq",
+        "body": [
+           "const express = require('express');"
+        ]
+    },
+    "Nodejs_require_morgan":{
+        "prefix": "morganreq",
+        "body": [
+           "const morgan = require('morgan');"
+        ]
+    },
+    "Nodejs_require_rimraf":{
+        "prefix": "rimrafreq",
+        "body": [
+           "const rimraf = require('rimraf');"
+        ]
+    },
+    "Nodejs_require_remove":{
+        "prefix": "removereq",
+        "body": [
+           "const remove = require('remove');"
+        ]
+    },
+    "Nodejs_require_mongoose":{
+        "prefix": "mongoosereq",
+        "body": [
+           "const mongoose = require('mongoose');"
+        ]
+    },
+    "Nodejs_appexpress":{
+        "prefix": "appexpress",
+        "body": [
+           "const app = express();"
+        ]
+    },
+    "Nodejs_dotenv":{
+        "prefix": "dotenv",
+        "body": [
+           "require('dotenv').config();"
+        ]
+    },
+    "Nodejs_require_bcrypt":{
+        "prefix": "bcryptreq",
+        "body": [
+           "const bcrypt = require('bcrypt');"
+        ]
+    },
+    "Nodejs_require_jsonwebtoken":{
+        "prefix": "jsonwebtokenreq",
+        "body": [
+           "const jwt = require('jsonwebtoken');"
+        ]
+    },
+    "Nodejs_require_axios":{
+        "prefix": "axiosreq",
+        "body": [
+           "const axios = require('axios');"
+        ]
+    },
+    "Nodejs_require_async":{
+        "prefix": "asyncreq",
+        "body": [
+           "const async = require('async');"
+        ]
+    },
+    "Nodejs_appexpressRouter":{
+        "prefix": "appRouter",
+        "body": [
+           "const app = express.Router();"
+        ]
+    },
+    "Nodejs_schemaMongoose":{
+        "prefix": "schemaMongoose",
+        "body": [
+           "const mongoose = require('mongoose');",
+           "const Schema = mongoose.Schema;",
+           " ",
+           " ",
+           "const userSchema = new Schema({",
+           "    name:String,",
+           "    surname:String,$0",
+           "});",
+           " ",
+           "const User = mongoose.model('User',userSchema)",
+           " ",
+           "module.exports=User"
+        ]
+    },
+    "Nodejs_appListen":{
+        "prefix": "appListen",
+        "body": [
+          "app.listen(port,()=> console.log(`server running on ${port}`))"
+        ]
+    },
+    "Nodejs_appPost":{
+        "prefix": "appPost",
+        "body": [
+          "app.post('/',async (req, res)=>{",
+          "    try{",
+          "        $0",
+          "    } catch(err){",
+          "        console.log(err)",
+          "    }",
+          "})"
+        ]
+    },
+    "Nodejs_module_exports":{
+        "prefix": "mex",
+        "body": [
+            "module.exports = $0;"
+        ]
+    },
+    "Nodejs_error_find":{
+        "prefix": "err",
+        "body": [
+            "(err,data)=>{",
+            "    if(err) throw err",
+            "    $0",
+            "}"
+        ]
+    },
+    "Nodejs_app.use":{
+        "prefix": "appuse",
+        "body": [
+            "app.use($0)"
+        ]
+    },
+    "Nodejs_fsfunc":{
+        "prefix": "fsfunc",
+        "body": [
+            "fs.$1(path.join(__dirname, './', '$0'))"
+        ]
+    },
+    "Nodejs_server":{
+        "prefix": "server",
+        "body": [
+            "const express = require(\"express\");",
+            "const app = express();",
+            "require('dotenv').config();",
+            "const port = process.env.port;",
+            "const morgan = require(\"morgan\");",
+            "const mongoose = require('mongoose');",
+                    "",
+                    "",
+            "const mongoURL = process.env.mongoURL",
+                    "",
+                    "",
+            "const MongoDB = () => {",
+            "    mongoose.connect(mongoURL,{",
+            "        useNewUrlParser: true,",
+            "        useUnifiedTopology: true,",
+            "        useCreateIndex:true,",
+            "    },()=> console.log('mongoDB connected'))",
+            "}",
+            "MongoDB()",
+            "",
+            "",
+            "",
+            "app.use(morgan(`dev`));",
+            "app.use(express.json())",
+            "app.use(express.urlencoded({",
+            " extended: false",
+            "}))",
+            "",
+            "$0",
+            "",
+            "",
+            "app.listen(port, () => console.log(`server is runnig on port `));"
+        ]
+    },
+    "Nodejs_bcrypt_compare":{
+        "prefix": "comparebcrypt",
+        "body": [
+            "bcrypt.compare($1,$2,(err,data)=>{",
+            "    if(data){",
+            "        $0",
+            "    }",
+            "})"
+        ]
+    },
+    "Nodejs_bcrypt_hash":{
+        "prefix": "hashbcrypt",
+        "body": [
+            "bcrypt.hash($1,10,(err,data)=>{",
+            "    $0",
+            "})"
+        ]
+    }
+}

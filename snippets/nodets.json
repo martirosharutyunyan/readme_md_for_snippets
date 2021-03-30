@@ -1,0 +1,329 @@
+{
+    "Nodejs-import-":{
+        "prefix": "rq",
+        "body": [
+           "require('$0');"
+        ]
+    },
+    "Nodejs-import-fs":{
+        "prefix": "fsimport",
+        "body": [
+           "import fs from 'fs';"
+        ]
+    },
+    "Nodejs-import-path":{
+        "prefix": "pathimport",
+        "body": [
+           "import path from 'path';"
+        ]
+    },
+    "Nodejs-import-express":{
+        "prefix": "expressimport",
+        "body": [
+           "import express from 'express';"
+        ]
+    },
+    "Nodejs-import-morgan":{
+        "prefix": "morganimport",
+        "body": [
+           "import morgan from 'morgan';"
+        ]
+    },
+    "Nodejs-import-rimraf":{
+        "prefix": "rimrafimport",
+        "body": [
+           "import rimraf from 'rimraf';"
+        ]
+    },
+    "Nodejs-import-remove":{
+        "prefix": "removeimport",
+        "body": [
+           "import remove from 'remove';"
+        ]
+    },
+    "Nodejs-import-mongoose":{
+        "prefix": "mongooseimport",
+        "body": [
+           "import mongoose from 'mongoose';"
+        ]
+    },
+    "Nodejs-import-mysql":{
+        "prefix": "mysqlimport",
+        "body": [
+           "import mysql from 'mysql';"
+        ]
+    },
+    "Nodejs-import-pg":{
+        "prefix": "pgimport",
+        "body": [
+           "import pg from 'pg';"
+        ]
+    },
+    "Nodejs-import-puppeteer":{
+        "prefix": "puppeteerimport",
+        "body": [
+           "import puppeteer from 'puppeteer';"
+        ]
+    },
+    "Nodejs-import-nodemailer":{
+        "prefix": "nodemailerimport",
+        "body": [
+           "import nodemailer from 'nodemailer';"
+        ]
+    },
+    "Nodejs-appexpress":{
+        "prefix": "appexpress",
+        "body": [
+           "const app = express();"
+        ]
+    },
+    "Nodejs-dotenv":{
+        "prefix": "dotenv",
+        "body": [
+           "dotenv.config();"
+        ]
+    },
+    "Nodejs-import-bcrypt":{
+        "prefix": "bcryptimport",
+        "body": [
+           "import bcrypt from 'bcrypt';"
+        ]
+    },
+    "Nodejs-import-jsonwebtoken":{
+        "prefix": "jsonwebtokenimport",
+        "body": [
+           "import jwt from 'jsonwebtoken';"
+        ]
+    },
+    "Nodejs-import-axios":{
+        "prefix": "axiosimport",
+        "body": [
+           "import axios from 'axios';"
+        ]
+    },
+    "Nodejs-import-async":{
+        "prefix": "asyncimport",
+        "body": [
+           "import async from 'async';"
+        ]
+    },
+    "Nodejs-appexpressRouter":{
+        "prefix": "appRouter",
+        "body": [
+           "const app = express.Router();"
+        ]
+    },
+    "Nodejs-schemaMongoose":{
+        "prefix": "schemaMongoose",
+        "body": [
+           "import mongoose from 'mongoose';",
+           "const Schema = mongoose.Schema;",
+           " ",
+           " ",
+           "const userSchema = new Schema({",
+           "    name:String,",
+           "    surname:String,$0",
+           "});",
+           " ",
+           "export const User = mongoose.model('User',userSchema)"
+        ]
+    },
+    "Nodejs-appListen":{
+        "prefix": "appListen",
+        "body": [
+          "app.listen(port,()=> console.log(`server running on http://localhost:port`))"
+        ]
+    },
+    "Nodejs-appPost":{
+        "prefix": "appPost",
+        "body": [
+          "app.post('/',async (req, res):Promise<void>=>{",
+          "    try{",
+          "        $0",
+          "    } catch(err:any){",
+          "        console.log(err)",
+          "    }",
+          "})"
+        ]
+    },
+    "Nodejs-module-exports":{
+        "prefix": "mex",
+        "body": [
+         "module.exports = $0;"
+        ]
+    },
+    "Nodejs-error-find":{
+        "prefix": "err",
+        "body": [
+         "(err:Error,data:$1):void=>{",
+         "    if(err) throw err",   
+         "    $0",
+         "}"
+        ]
+    },
+    "Nodejs-app.use":{
+        "prefix": "use",
+        "body": [
+        "app.use('/$1',require('$0'))"
+        ]
+    },
+    "Nodejs-fsfunc":{
+        "prefix": "fsfunc",
+        "body": [
+        "fs.$1(path.join(-dirname, './', '$0'))"
+        ]
+    },
+    "Nodejs-server":{
+        "prefix": "server",
+        "body": [
+            "import express from 'express';",
+            "import dotenv from 'dotenv'",
+            "dotenv.config();",
+            "import morgan from 'morgan';",
+            "import cors from 'cors'",
+            "import  { graphqlHTTP } from 'express-graphql';",
+            "import { client } from './model/postgres'",
+            "import { schema } from './schema/schema';",
+            "const app = express();",
+            "const port:string | number = process.env.port;",
+            "",
+            "",
+            "client.connect((err:Error):void=>{",
+            "    if(err) throw err",
+            "    console.log('postgresDB connected')",
+            "})",
+            "",
+            "",
+            "app.use(cors())",
+            "app.use(morgan(`dev`));",
+            "app.use(express.json())",
+            "app.use(express.urlencoded({",
+            "   extended: false",
+            "}))",
+            "",
+            "app.use('/graphql',graphqlHTTP({",
+            "    schema,",
+            "    graphiql:true",
+            "}))",
+            "$0",
+            "",
+            "",
+            "app.listen(port, () => console.log(`server is runnig on port $1`));"
+        ]
+    },
+    "Nodejs-nodemailer":{
+        "prefix": "nodemailer",
+        "body": [
+            "import nodemailer from 'nodemailer';",
+            "",
+            "const transporter = nodemailer.createTransport(",
+            "    {",
+            "        host: \"smtp.mail.ru\",",
+            "        port: 465,",
+            "        secure: true, // if 465 true else false",
+            "        auth: {",
+            "            user: \"\",",
+            "            pass: \"\",",
+            "        },",
+            "    }",
+            "    {",
+            "        from: \"\",",
+            "    },",
+            ");",
+            "",
+            "export const mailer= (message:):void => {",
+            "    transporter.sendMail(message,(err:Error):void => {",
+            "        if (err) console.log('email dont exist')",
+            "    });",
+            "};"
+        ]
+    },
+    "Nodejs-rout":{
+        "prefix": "router",
+        "body": [
+            "import express from 'express';",
+            "const app = express.Router();",
+            "        ",
+            "app.post('/',async (req, res):Promise<void>=>{",
+            "    try{",
+            "        $0",
+            "    } catch(err:any){",
+            "        console.log(err)",
+            "    }",
+            "})",
+            "",
+            "module.exports = app;"
+        ]
+    },
+    "Nodejs-bcrypt-compare":{
+        "prefix": "comparebcrypt",
+        "body": [
+            "const $1 = await bcrypt.compare($0,)"
+        ]
+    },
+    "Nodejs-bcrypt-hash":{
+        "prefix": "hashbcrypt",
+        "body": [
+            "const $1 = await bcrypt.hash($0,10)"
+        ]
+    },
+    "Nodejs-mysql":{
+        "prefix": "mysql",
+        "body": [
+            "import mysql from 'mysql';",
+            "",
+            "",
+            "export const conn = mysql.createConnection({",
+            "    host:'localhost',",
+            "    user:process.env.mysqlUser,",
+            "    database:process.env.mysqlDB,",
+            "    password:process.env.mysqlPassword",
+            "})"
+        ]
+    },
+    "Nodejs-mysqlconnection":{
+        "prefix": "mysqlconnection",
+        "body": [
+            "conn.connect((err:Error):void=>{",
+            "    if(err) throw err",
+            "    console.log('mysqlDB connected')",
+            "})"
+        ]
+    },
+    "Nodejs-querymysql":{
+        "prefix": "mysqlquery",
+        "body": [
+            "const $1 = await conn.query($0)"
+        ]
+    },
+
+    "Nodejs-postgreSQL":{
+        "prefix": "postgres",
+        "body": [
+            "import { Client } from 'pg';",
+            "",
+            "export const client = new Client({",
+            "    database:process.env.postgresDBname,",
+            "    password:process.env.postgresDBpassword,",
+            "    port:5432,",
+            "    host:'localhost',",
+            "    user:'postgres',",
+            "})"
+        ]
+    },
+    "Nodejs-postgresconnection":{
+        "prefix": "postgresconnection",
+        "body": [
+            "client.connect((err:Error):void=>{",
+            "    if(err) throw err",
+            "    console.log('postgresDB connected')",
+            "})"
+        ]
+    },
+    "Nodejs-querypostgres":{
+        "prefix": "postgresquery",
+        "body": [
+            "const $1 = await client.query($0)"
+        ]
+    }
+}

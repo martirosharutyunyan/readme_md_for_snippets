@@ -1,0 +1,8 @@
+{
+    "SCSS_include":{
+        "prefix": "i",
+        "body": [
+           "@include $1($0);"
+        ]
+    }
+}

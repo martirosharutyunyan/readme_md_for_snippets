@@ -1,0 +1,120 @@
+{
+    "Javascript_function":{
+        "prefix": "fn",
+        "body": [
+            "function $1($2) {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Javascript_function_e":{
+        "prefix": "fne",
+        "body": [
+            "function $1(e) {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Javascript_callback":{
+        "prefix": "cf",
+        "body": [
+           "const $1 = ($2) => {",
+           "    $0",
+           "}"
+        ]
+    },
+    "Javascript_callback_e":{
+        "prefix": "cfe",
+        "body": [
+           "const $1 = e => {",
+           "    $0",
+           "}"
+        ]
+    },
+    "Javascript_callback_line":{
+        "prefix": "cfl",
+        "body": [
+           "const $1 = ($2) => $0"
+        ]
+    },
+    "Javascript_callback_line_e":{
+        "prefix": "cfle",
+        "body": [
+           "const $1 = e => $0"
+        ]
+    },
+    "Javascript_callback_line_e_without_const_line":{
+        "prefix": "lineCallback",
+        "body": [
+           "($1)=> $0"
+        ]
+    },
+    "Javascript_callback_line_e_without_const_e_line":{
+        "prefix": "lineCallbackE",
+        "body": [
+           "e=> $0"
+        ]
+    },
+    "Javascript_callback_line_e_without_const":{
+        "prefix": "callback",
+        "body": [
+           "($1)=> {",
+           "    $0", 
+           "}"
+        ]
+    },
+    "Javascript_callback_line_e_without_const_e":{
+        "prefix": "callbackE",
+        "body": [
+           "e=> {",
+           "    $0", 
+           "}"
+        ]
+    },
+    "Javascript_try_catch":{
+        "prefix": "tr",
+        "body": [
+           "try {",
+           "    $0",
+           "} catch(err) {",
+           "    console.log(err)",
+           "}"
+        ]
+    },
+    "Javascript_return":{
+        "prefix": "r",
+        "body": [
+           "return $0"
+        ]
+    },
+    "Javascript_ternary":{
+        "prefix": "ter",
+        "body": [
+           "$1 ? $2: $0"
+        ]
+    },
+    "Javascript_from_char_code":{
+        "prefix": "sfcc",
+        "body": [
+           "String.fromCharCode($0)"
+        ]
+    },
+    "Javascript_JSON.stringify":{
+        "prefix": "jsonstr",
+        "body": [
+           "JSON.stringify($0,null,2)"
+        ]
+    },
+    "Javascript_JSON.parse":{
+        "prefix": "jsonparse",
+        "body": [
+           "JSON.parse($0)"
+        ]
+    },
+    "Javascript_spread_rest":{
+        "prefix": "k",
+        "body": [
+           "...$0"
+        ]
+    }
+}

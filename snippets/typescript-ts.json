@@ -1,0 +1,880 @@
+{
+    "Typescript-import-react": {
+        "prefix": "imr",
+        "body": [
+            "import React from 'react';"
+        ]
+    },
+    "Typescript-import-with-modul": {
+        "prefix": "im",
+        "body": [
+            "import $1 from '$0';"
+        ]
+    },
+    "Typescript-import-with-modul-with-skopes": {
+        "prefix": "imp",
+        "body": [
+            "import { $0 } from '$1';"
+        ]
+    },
+    "Typescript-import-all": {
+        "prefix": "impa",
+        "body": [
+            "import React, { useState, useEffect, useMemo, useRef, memo, FC, lazy, Suspense } from 'react';"
+        ]
+    },
+    "Typescript-import-router-dom": {
+        "prefix": "imrout",
+        "body": [
+            "import { Route, Switch, NavLink, Link } from 'react-router-dom';"
+        ]
+    },
+    "Typescript-import-react-redux": {
+        "prefix": "imredux",
+        "body": [
+            "import { useSelector, useDispatch } from 'react-redux';"
+        ]
+    },
+    "Typescript-import-prop-types": {
+        "prefix": "imty",
+        "body": [
+            "import PropTypes from 'prop-types';"
+        ]
+    },
+    "Typescript-import-axios": {
+        "prefix": "ima",
+        "body": [
+            "import axios, { AxiosResponse } from 'axios';"
+        ]
+    },
+    "Typescript-karch-React": {
+        "prefix": "rfc",
+        "body": [
+            "import React, { useState, useEffect, useMemo, useRef, memo, FC } from 'react';",
+            "",
+            "let $1:FC = () => {",
+            "    return (",
+            "        <div>",
+            "            ",
+            "        </div>", 
+            "    )",
+            "}",
+            "",
+            "",
+            "export default $1;"
+        ]
+    },
+    "Typescript-React": {
+        "prefix": "react",
+        "body": [
+            "import React, { useState, useEffect, useMemo, useRef, memo, FC, } from 'react';",
+            "import { Route, Switch, NavLink, Link } from 'react-router-dom';",
+            "import { animateScroll as scroll } from 'react-scroll';",
+            "import { useSelector, useDispatch } from 'react-redux';",
+            "import { action } from '../../redux/actions/action';",
+            "// import Media from '../../media';",
+            "import axios from 'axios';",
+            "import 'react-scroll';",
+            "//types",
+            "import { Redux } from '../../types/types';",
+            "",
+            "let $1:FC = () => {",
+            "",
+            "    const dispatch = useDispatch();",
+            "",
+            "    useEffect(() => {",
+            "",
+            "    }, []);",
+            "",
+            "    const [state, setState] = useState('');",
+            "",
+            "    const arr = useSelector((state:Redux) => state.Reducer.arr);",
+            "",
+            "    return (",
+            "        <>",
+            "            <section className=''>",
+            "                ",
+            "            </section>",
+            "        </>",
+            "    )",
+            "}",
+            "",
+            "export default $1 = memo($1);"
+        ]
+    },
+    "Typescript-return-Typescript": {
+        "prefix": "rjsx",
+        "body": [
+            "return (",
+            "    <div>",
+            "        $0",
+            "    </div>",
+            ")"
+        ]
+    },
+    "Typescript-useState": {
+        "prefix": "useState",
+        "body": [
+            "const [$1, set$1] = useState<$2>($0);"
+        ]
+    },
+    "Typescript-useEffect": {
+        "prefix": "useEffect",
+        "body": [
+            "useEffect(():void => {",
+            "    $0",
+            "}, [$1]);"
+        ]
+    },
+    "Typescript-memo": {
+        "prefix": "mo",
+        "body": [
+            "memo($0);"
+        ]
+    },
+    "Typescript-useSelector": {
+        "prefix": "useSelector",
+        "body": [
+            "const $1 = useSelector((state:Redux) => state.Reducer.$0);"
+        ]
+    },
+    "Typescript-cfuseMemo": {
+        "prefix": "useMemo",
+        "body": [
+            "const $2 = useMemo(() => {",
+            "    return ($3)$4=> {",
+            "        $0",
+            "    }",
+            "}, [$1]);"
+        ]
+    },
+    "Typescript-mapPrint": {
+        "prefix": "mapPrint",
+        "body": [
+            "{$1.map((elem:$2,i:number):JSX.Element => {",
+            "    return (",
+            "        <div key={elem.id}>",
+            "            $0",
+            "        </div>",
+            "    )",
+            "})}"
+        ]
+    },
+    "Typescript-map": {
+        "prefix": "map",
+        "body": [
+            "$1.map((elem:$2)=> {",
+            "    if (elem.id === $1){",
+            "        $0",
+            "    }",
+            "    return elem",
+            "})"
+        ]
+    },
+    "Typescript-prevent-default": {
+        "prefix": "epd",
+        "body": [
+            "e.preventDefault();"
+        ]
+    },
+    "Typescript-onclick": {
+        "prefix": "onclick",
+        "body": [
+            "onClick={$0}"
+        ]
+    },
+    "Typescript-onchange": {
+        "prefix": "onchange",
+        "body": [
+            "onChange={$0}"
+        ]
+    },
+    "Typescript-dispatch": {
+        "prefix": "dispatch",
+        "body": [
+            "const dispatch = useDispatch();"
+        ]
+    },
+    "Typescript-dispatch-useing": {
+        "prefix": "dis",
+        "body": [
+            "dispatch({type:'$1',payload:$0})"
+        ]
+    },
+    "Typescript-className": {
+        "prefix": "cln",
+        "body": [
+            "className='$0'"
+        ]
+    },
+
+
+
+    "Typescript-try-catch":{
+        "prefix": "tr",
+        "body": [
+           "try {",
+           "    $0",
+           "} catch(err) {",
+           "    console.log(err)",
+           "}"
+        ]
+    },
+    "Typescript-try-catch-return":{
+        "prefix": "trr",
+        "body": [
+           "try {",
+           "    $0",
+           "} catch(err) {",
+           "    return err",
+           "}"
+        ]
+    },
+    "Typescript-return":{
+        "prefix": "r",
+        "body": [
+           "return $0"
+        ]
+    },
+    "Typescript-ternary":{
+        "prefix": "ter",
+        "body": [
+           "$1 ? $2: $0"
+        ]
+    },
+    "Typescript-from-char-code":{
+        "prefix": "sfcc",
+        "body": [
+           "String.fromCharCode($0)"
+        ]
+    },
+    "Typescript-JSON.stringify":{
+        "prefix": "jsonstr",
+        "body": [
+           "JSON.stringify($0,null,2)"
+        ]
+    },
+    "Typescript-JSON.parse":{
+        "prefix": "jsonparse",
+        "body": [
+           "JSON.parse($0)"
+        ]
+    },
+    "Typescript-spread-rest":{
+        "prefix": "k",
+        "body": [
+           "...$0"
+        ]
+    },
+    "Typescript-Console.log":{
+        "prefix": "cl",
+        "body": [
+            "console.log($0)"
+        ]
+    },
+    "Typescript-if":{
+        "prefix": "if",
+        "body": [
+            "if ($1) {",
+            "  $0",
+            "}"
+        ]
+    },
+    "Typescript-if-else":{
+        "prefix": "ife",
+        "body": [
+            "if ($1) {",
+            "    $2",
+            "} else {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-else-if":{
+        "prefix": "ef",
+        "body": [
+            "else if ($1) {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-switch":{
+        "prefix": "sw",
+        "body": [
+            "switch ($1) {",
+            "    case $2:",
+            "        $0",
+            "        break;",
+            "    default:",
+            "        console.log('error')",
+            "}"
+        ]
+    },
+    "Typescript-switch-redux":{
+        "prefix": "swredux",
+        "body": [
+            "switch (action.type) {",
+            "    case $2:",
+            "        $0",
+            "    default:",
+            "        return state",
+            "}"
+        ]
+    },
+    "Typescript-case":{
+        "prefix": "cs",
+        "body": [
+            "case $1:",
+            "    $0",
+            "    break;"
+        ]
+    },
+    "Typescript-case-redux":{
+        "prefix": "csredux",
+        "body": [
+            "case $1:",
+            "    return {",
+            "        ...state,",
+            "        $0",
+            "    }"
+        ]
+    },
+    "Typescript-for":{
+        "prefix": "for",
+        "body": [
+            "for (let i:number = 0; i < $1; i++) {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-for-in":{
+        "prefix": "forin",
+        "body": [
+            "for (let key in $1) {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-for-of":{
+        "prefix": "forof",
+        "body": [
+            "for (let key of $1) {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-const":{
+        "prefix": "c",
+        "body": [
+            "const $1: = $0"
+        ]
+    },
+    "Typescript-const-number":{
+        "prefix": "cnum",
+        "body": [
+            "const $1: number = $0"
+        ]
+    },
+    "Typescript-const-string":{
+        "prefix": "cstr",
+        "body": [
+            "const $1: string = '$0'"
+        ]
+    },
+    "Typescript-const-boolean":{
+        "prefix": "cbool",
+        "body": [
+            "const $1: boolean = $0"
+        ]
+    },
+    "Typescript-const-array":{
+        "prefix": "carr",
+        "body": [
+            "const $1: $2[] = $0"
+        ]
+    },
+    "Typescript-const-object":{
+        "prefix": "cob",
+        "body": [
+            "const $1: $2 = {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-let":{
+        "prefix": "l",
+        "body": [
+            "let $1: = $0"
+        ]
+    },
+    "Typescript-let-number":{
+        "prefix": "lnum",
+        "body": [
+            "let $1: number = $0"
+        ]
+    },
+    "Typescript-let-string":{
+        "prefix": "lstr",
+        "body": [
+            "let $1: string = '$0'"
+        ]
+    },
+    "Typescript-let-boolean":{
+        "prefix": "lbool",
+        "body": [
+            "let $1 : boolean = $0"
+        ]
+    },
+    "Typescript-let-array":{
+        "prefix": "larr",
+        "body": [
+            "let $1: $2[] = $0"
+        ]
+    },
+    "Typescript-let-object":{
+        "prefix": "lob",
+        "body": [
+            "let $1: $2 = {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-interface":{
+        "prefix": "int",
+        "body": [
+            "interface $1{",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-export-interface":{
+        "prefix": "intexp",
+        "body": [
+            "export interface $1{",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-type":{
+        "prefix": "type",
+        "body": [
+            "type $1 = $0"
+        ]
+    },
+    "Typescript-export-type":{
+        "prefix": "typeexp",
+        "body": [
+            "export type $1 = $0"
+        ]
+    },
+    "Typescript-type-object":{
+        "prefix": "typeob",
+        "body": [
+            "type $1 = {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-export-type-object":{
+        "prefix": "typeobexp",
+        "body": [
+            "export type $1 = {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-type-array":{
+        "prefix": "typearr",
+        "body": [
+            "type $1 = $0[]"
+        ]
+    },
+    "Typescript-export-type-array":{
+        "prefix": "typearrexp",
+        "body": [
+            "export type $1 = $0[]"
+        ]
+    },
+    "Typescript-lazy":{
+        "prefix": "lazy",
+        "body": [
+            "const $1 = lazy(()=> import('$0'))"
+        ]
+    },
+    "Typescript-Suspense":{
+        "prefix": "suspense",
+        "body": [
+            "<Suspense fallback={<div>...Loading</div>}>",
+            "    $0",
+            "</Suspense>"
+        ]
+    },
+
+
+
+    "Typescript-functions-number":{
+        "prefix": "fnnum",
+        "body": [
+            "function $1($2):number {",
+            "    $0",
+            "    return ",
+            "}"
+        ]
+    },
+    "Typescript-functions-string":{
+        "prefix": "fnstr",
+        "body": [
+            "function $1($2):string {",
+            "    $0",
+            "    return ",
+            "}"
+        ]
+    },
+    "Typescript-functions-boolean":{
+        "prefix": "fnbool",
+        "body": [
+            "function $1($2):boolean {",
+            "    $0",
+            "    return ",
+            "}"
+        ]
+    },  
+    "Typescript-functions-void":{
+        "prefix": "fnvoid",
+        "body": [
+            "function $1($2):void {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-functions-Typescript":{
+        "prefix": "fnjsx",
+        "body": [
+            "function $1($2):JSX.Element {",
+            "    return (",
+            "        <Suspense>",
+            "            $0",
+            "        </Suspense>",
+            "    )",
+            "}"
+        ]
+    },
+    "Typescript-function":{
+        "prefix": "fn",
+        "body": [
+            "function $1($2):$3 {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-export-default":{
+        "prefix": "exp",
+        "body": [
+            "export default $0"
+        ]
+    },
+    "Typescript-variables-number":{
+        "prefix": "n",
+        "body": [
+            "number"
+        ]
+    },
+    "Typescript-variables-string":{
+        "prefix": "s",
+        "body": [
+            "string"
+        ]
+    },
+    "Typescript-index.tsx":{
+        "prefix": "indextsx",
+        "body": [
+            "import React from 'react';",
+            "import ReactDOM from 'react-dom';",
+            "import rootReducer from './components/redux/store/store';",
+            "import { BrowserRouter as Router } from 'react-router-dom';",
+            "import thunkMiddleware from 'redux-thunk';",
+            "import { Provider } from 'react-redux';",
+            "import { createStore, applyMiddleware, compose } from 'redux';",
+            "import App from './App';",
+            "",
+            "//const store=createStore(rootReducer)",
+            "declare global {",
+            "    interface Window {",
+            "      -REDUX-DEVTOOLS-EXTENSION-COMPOSE-?: typeof compose;",
+            "    }",
+            "}",
+            "",
+            "const composeEnhancers = window.-REDUX-DEVTOOLS-EXTENSION-COMPOSE- || compose;",
+            "const store = createStore(rootReducer,composeEnhancers(applyMiddleware(thunkMiddleware)));",
+            "",
+            "ReactDOM.render(",
+            "    <React.StrictMode>",
+            "        <Provider store={store}>",
+            "            <Router>",
+            "                <App />",
+            "            </Router>",
+            "        </Provider>",
+            "    </React.StrictMode>,",
+            "    document.getElementById('root'),",
+            ");"
+        ]
+    },
+
+
+    "Typescript-callback":{
+        "prefix": "cf",
+        "body": [
+           "const $1 = ($2:): => {",
+           "    $0",
+           "}"
+        ]
+    },
+    "Typescript-callback-async":{
+        "prefix": "cfa",
+        "body": [
+           "const $1 = async ($2:):Promise<any$3> => {",
+           "    $0",
+           "}"
+        ]
+    },
+    "Typescript-callback-line-async":{
+        "prefix": "cfl",
+        "body": [
+           "const $1 = ($2:): => $0"
+        ]
+    },
+    "Typescript-callback-line":{
+        "prefix": "cfla",
+        "body": [
+           "const $1 = async ($2:):Promise<any$3> => $0"
+        ]
+    },
+    "Typescript-callback-line-e-without-const-line":{
+        "prefix": "lineCallback",
+        "body": [
+           "($1:):any$2=> $0"
+        ]
+    },
+    "Typescript-callback-line-e-without-const-line-async":{
+        "prefix": "lineCallbacka",
+        "body": [
+           "async ($1:):Promise<any$2> => $0"
+        ]
+    },
+    "Typescript-callback-line-e-without-const":{
+        "prefix": "callback",
+        "body": [
+           "($1:):=> {",
+           "    $0", 
+           "}"
+        ]
+    },
+    "Typescript-callback-line-e-without-const-async":{
+        "prefix": "callbacka",
+        "body": [
+           "async ($1:):Promise<any$2> => {",
+           "    $0", 
+           "}"
+        ]
+    },
+    "Typescript-async":{
+        "prefix": "p",
+        "body": [
+           "Promise<$0>"
+        ]
+    },
+    "Typescript-async-void":{
+        "prefix": "pv",
+        "body": [
+           "Promise<void>"
+        ]
+    },
+    "Typescript-post":{
+        "prefix": "post",
+        "body": [
+           "let postToBack = await post('$1',$0)"
+        ]
+    },
+    "Promise":{
+        "prefix": "promise",
+        "body": [
+            "let promise = new Promise((res,rej)=>{",
+            "    $0",
+            "})"
+        ]
+    },
+    "Typescript-export":{
+        "prefix": "ex",
+        "body": [
+            "export $0"
+        ]
+    },
+    "Typescript-new_FormData":{
+        "prefix": "formData",
+        "body": [
+            "const $0 = new FormData()"
+        ]
+    },
+    "Typescript-class":{
+        "prefix": "class",
+        "body": [
+            "class $1 {",
+            "    $0",    
+            "}"
+        ]
+    },
+    "Typescript-export-class":{
+        "prefix": "eclass",
+        "body": [
+            "class $1 extends $2 {",
+            "    $0",    
+            "}"
+        ]
+    },
+    "Typescript-method":{
+        "prefix": "cmethod",
+        "body": [
+            "$1($2):any$3{",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-method-async":{
+        "prefix": "cmethoda",
+        "body": [
+            "$1($2):Promise<any$3> {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-class-static-method":{
+        "prefix": "csm",
+        "body": [
+            "static $1($2):any$3 {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-class-static-async-method":{
+        "prefix": "csma",
+        "body": [
+            "static async $1($2):Promise<any$3> {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Typescript-class-static":{
+        "prefix": "static",
+        "body": [
+            "static $0"
+        ]
+    },
+    "Typescript-class-public":{
+        "prefix": "public",
+        "body": [
+            "public $0"
+        ]
+    },
+    "Typescript-class-readonly":{
+        "prefix": "readonly",
+        "body": [
+            "readonly $0"
+        ]
+    },
+    "Typescript-class-private":{
+        "prefix": "private",
+        "body": [
+            "private $0"
+        ]
+    },
+    "Typescript-class-protected":{
+        "prefix": "protected",
+        "body": [
+            "protected $0"
+        ]
+    },
+    "Typescript-class-super":{
+        "prefix": "super",
+        "body": [
+            "super($0)"
+        ]
+    },
+    "Typescript-class-constructor":{
+        "prefix": "constructor",
+        "body": [
+            "constructor($0){",
+            "    ",
+            "}"
+        ]
+    },
+    "Typescript-class-constructor-this":{
+        "prefix": "cthis",
+        "body": [
+            "this.$0 = $0"
+        ]
+    },
+    "Typescript-Error":{
+        "prefix": "nr",
+        "body": [
+            "new Error('$0')"
+        ]
+    },
+    "Typescript-Sequelize":{
+        "prefix": "sqconnect",
+        "body": [
+            "import { Sequelize, DataTypes} from 'sequelize';",
+            "",
+            "",
+            "export const sequelize = new Sequelize(process.env.DBNAME,process.env.DBUSERNAME,process.env.DBPASSWORD,{",
+            "    host:'127.0.0.1',",
+            "    dialect:'$0'",
+            "})"
+        ]
+    },
+    "Typescript-Sequelize-define":{
+        "prefix": "sqdefine",
+        "body": [
+            "export const $1 = sequelize.define('$2',{",
+            "    $0",
+            "})"
+        ]
+    },
+    "Typescript-Sequelize-type":{
+        "prefix": "sqtype",
+        "body": [
+            "{",
+            "    type:DataTypes.$0",
+            "},"
+        ]
+    },
+    "Typescript-Sequelize-findOne":{
+        "prefix": "sqfindOne",
+        "body": [
+            "let data: any = await $1.findOne({ where: { $0 } })"
+        ]
+    },
+    "Typescript-Sequelize-update":{
+        "prefix": "squpdate",
+        "body": [
+            "await $1.update({$0},{where:{})"
+        ]
+    },
+    "Typescript-Sequelize-create":{
+        "prefix": "sqcreate",
+        "body": [
+            "await $1.create({$0})"
+        ]
+    },
+    "Typescript-Sequelize-findAll":{
+        "prefix": "sqfindAll",
+        "body": [
+            "const data = await $0.findAll()"
+        ]
+    },
+    "Typescript-Sequelize-destroy":{
+        "prefix": "sqdestroy",
+        "body": [
+            "await $1.destroy({where:{ $0 }})"
+        ]
+    }
+}

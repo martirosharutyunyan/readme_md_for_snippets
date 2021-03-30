@@ -1,0 +1,114 @@
+{
+    "Javascript_Console.log":{
+        "prefix": "cl",
+        "body": [
+            "console.log($0)"
+        ]
+    },
+    "Javascript_const":{
+        "prefix": "c",
+        "body": [
+            "const $1 = $0;"
+        ]
+    },
+    "Javascript_const_arr":{
+        "prefix": "car",
+        "body": [
+            "const $1 = [$0];"
+        ]
+    },
+    "Javascript_const_object":{
+        "prefix": "cob",
+        "body": [
+            "const $1 = {$0};"
+        ]
+    },
+    "Javascript_let":{
+        "prefix": "l",
+        "body": [
+            "let $1 = $0;"
+        ]
+    },
+    "Javascript_let_arr":{
+        "prefix": "lar",
+        "body": [
+            "let $1 = [$0];"
+        ]
+    },
+    "Javascript_let_object":{
+        "prefix": "lob",
+        "body": [
+            "let $1 = {$0};"
+        ]
+    },
+    "Javascript_if":{
+        "prefix": "if",
+        "body": [
+            "if ($1) {",
+            "  $0",
+            "}"
+        ]
+    },
+    "Javascript_if_else":{
+        "prefix": "ife",
+        "body": [
+            "if ($1) {",
+            "    $2",
+            "} else {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Javascript_else_if":{
+        "prefix": "ef",
+        "body": [
+            "else if ($1) {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Javascript_switch":{
+        "prefix": "sw",
+        "body": [
+            "switch ($1) {",
+            "    case $2:",
+            "        $0",
+            "        break;",
+            "    default:",
+            "        console.log('error')",
+            "}"
+        ]
+    },
+    "Javascript_case":{
+        "prefix": "cs",
+        "body": [
+            "case $1:",
+            "    $0",
+            "    break;"
+        ]
+    },
+    "Javascript_for":{
+        "prefix": "for",
+        "body": [
+            "for (let i = 0; i < $1; i++) {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Javascript_for_in":{
+        "prefix": "forin",
+        "body": [
+            "for (let key in $1) {",
+            "    $0",
+            "}"
+        ]
+    },
+    "Javascript_for_of":{
+        "prefix": "forof",
+        "body": [
+            "for (let key of $1) {",
+            "    $0",
+            "}"
+        ]
+    }
+}

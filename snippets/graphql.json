@@ -1,0 +1,86 @@
+{
+    "GraphqlImport":{
+        "prefix": "gImport",
+        "body": [
+            "import {",
+            "    GraphQLInt as gInt,",
+            "    GraphQLString as gString,",
+            "    GraphQLID as gID,",
+            "    GraphQLBoolean as gBoolean,",
+            "    GraphQLSchema as gSchema,",
+            "    GraphQLObjectType as gObjectType,",
+            "    GraphQLList as gList",
+            "} from \"graphql\";"
+        ]
+    },
+    "GraphqlObjectType":{
+        "prefix": "gObjectType",
+        "body": [
+            "const $1 = new gObjectType({",
+            "    name:'$2',",
+            "    fields:()=>({",
+            "        id:{type:gID},",
+            "        $0",
+            "    })",
+            "})"
+        ]
+    },
+    "GraphqlQuery":{
+        "prefix": "gQuery",
+        "body": [
+            "const query = new gObjectType({",
+            "    name:'Query',",
+            "    fields:()=>({",
+            "        $1:{",
+            "            type:$3,",
+            "            // args:{$2},",
+            "            async resolve(parents,args){",
+            "                return $0",
+            "            }",
+            "        }",
+            "    })",
+            "})"
+        ]
+    },
+    "GraphqlSchema":{
+        "prefix": "gSchema",
+        "body": [
+            "export const schema = new gSchema({",
+            "    query,",
+            "    mutation",
+            "})"
+        ]
+    },
+    "GraphqlType":{
+        "prefix": "gType",
+        "body": [
+            "{ type: g$0 },"
+        ]
+    },
+    "Graphql-request":{
+        "prefix": "gRequest",
+        "body": [
+            "export const gRequest =async (query:string):Promise<any> => {",
+            "    return await request('http://localhost:$0/graphql',query)",
+            "}"
+        ]
+    },
+    "Graphql-query":{
+        "prefix": "gquery",
+        "body": [
+            "const query = `",
+            "    query {",
+            "        $0",
+            "    }",
+            "`;",
+            "const data = await gRequest(query)",
+            "return data"
+        ]
+    },
+    "Graphql-client-import":{
+        "prefix": "img",
+        "body": [
+            "import { gql, request } from 'graphql-request';"
+        ]
+    }
+}

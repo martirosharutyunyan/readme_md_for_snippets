@@ -1,0 +1,15 @@
+{
+  "name": "readme_md_for_snippets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "createMDfail.js",
+  "scripts": {
+    "start": "nodemon createMDfail.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
