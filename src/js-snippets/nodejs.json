@@ -2,7 +2,7 @@
     "Nodejs_require_":{
         "prefix": "rq",
         "body": [
-           "require('$0');"
+           "require('$0')"
         ]
     },
     "Nodejs_require":{
@@ -92,7 +92,7 @@
     "Nodejs_appexpressRouter":{
         "prefix": "appRouter",
         "body": [
-           "const app = express.Router();"
+           "const router = express.Router();"
         ]
     },
     "Nodejs_schemaMongoose":{
@@ -107,27 +107,27 @@
            "    surname:String,$0",
            "});",
            " ",
-           "const User = mongoose.model('User',userSchema)",
+           "const User = mongoose.model('User', userSchema);",
            " ",
-           "module.exports=User"
+           "module.exports = User;"
         ]
     },
     "Nodejs_appListen":{
         "prefix": "appListen",
         "body": [
-          "app.listen(port,()=> console.log(`server running on ${port}`))"
+          "app.listen(port, () => console.log(`server running on ${port}`));"
         ]
     },
     "Nodejs_appPost":{
-        "prefix": "appPost",
+        "prefix": "routerPost",
         "body": [
-          "app.post('/',async (req, res)=>{",
+          "router.post('/', async (req, res) => {",
           "    try{",
           "        $0",
           "    } catch(err){",
-          "        console.log(err)",
+          "        console.log(err);",
           "    }",
-          "})"
+          "});"
         ]
     },
     "Nodejs_module_exports":{
@@ -139,7 +139,7 @@
     "Nodejs_error_find":{
         "prefix": "err",
         "body": [
-            "(err,data)=>{",
+            "(err, data) => {",
             "    if(err) throw err",
             "    $0",
             "}"
@@ -168,48 +168,48 @@
             "const mongoose = require('mongoose');",
                     "",
                     "",
-            "const mongoURL = process.env.mongoURL",
+            "const mongoURL = process.env.mongoURL;",
                     "",
                     "",
             "const MongoDB = () => {",
-            "    mongoose.connect(mongoURL,{",
+            "    mongoose.connect(mongoURL, {",
             "        useNewUrlParser: true,",
             "        useUnifiedTopology: true,",
             "        useCreateIndex:true,",
-            "    },()=> console.log('mongoDB connected'))",
-            "}",
-            "MongoDB()",
+            "    }, () => console.log('mongoDB connected'))",
+            "};",
+            "MongoDB();",
             "",
             "",
             "",
             "app.use(morgan(`dev`));",
             "app.use(express.json())",
             "app.use(express.urlencoded({",
-            " extended: false",
-            "}))",
+            "    extended: false",
+            "}));",
             "",
             "$0",
             "",
             "",
-            "app.listen(port, () => console.log(`server is runnig on port `));"
+            "app.listen(port, () => console.log(`server is running on http://localhost:${port}`));"
         ]
     },
     "Nodejs_bcrypt_compare":{
         "prefix": "comparebcrypt",
         "body": [
-            "bcrypt.compare($1,$2,(err,data)=>{",
-            "    if(data){",
+            "bcrypt.compare($1, $2, (err, data) => {",
+            "    if (data) {",
             "        $0",
             "    }",
-            "})"
+            "});"
         ]
     },
     "Nodejs_bcrypt_hash":{
         "prefix": "hashbcrypt",
         "body": [
-            "bcrypt.hash($1,10,(err,data)=>{",
+            "bcrypt.hash($1, 10, (err, data) => {",
             "    $0",
-            "})"
+            "});"
         ]
     }
 }

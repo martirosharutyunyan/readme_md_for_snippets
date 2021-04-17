@@ -22,7 +22,7 @@
             "        id:{type:gID},",
             "        $0",
             "    })",
-            "})"
+            "});"
         ]
     },
     "GraphqlQuery":{
@@ -39,7 +39,7 @@
             "            }",
             "        }",
             "    })",
-            "})"
+            "});"
         ]
     },
     "GraphqlSchema":{
@@ -47,8 +47,8 @@
         "body": [
             "export const schema = new gSchema({",
             "    query,",
-            "    mutation",
-            "})"
+            "    mutation,",
+            "});"
         ]
     },
     "GraphqlType":{
@@ -61,8 +61,8 @@
         "prefix": "gRequest",
         "body": [
             "export const gRequest =async (query:string):Promise<any> => {",
-            "    return await request('http://localhost:$0/graphql',query)",
-            "}"
+            "    return await request('http://localhost:$0/graphql', query);",
+            "};"
         ]
     },
     "Graphql-query":{
@@ -73,8 +73,8 @@
             "        $0",
             "    }",
             "`;",
-            "const data = await gRequest(query)",
-            "return data"
+            "const data = await gRequest(query);",
+            "return data;"
         ]
     },
     "Graphql-client-import":{

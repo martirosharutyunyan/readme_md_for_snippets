@@ -56,7 +56,7 @@
     "JSX_dispatch_useing": {
         "prefix": "dis",
         "body": [
-            "dispatch($0)"
+            "dispatch($0);"
         ]
     },
     "JSX_useEffect": {
@@ -89,7 +89,7 @@
         "prefix": "useMemo",
         "body": [
             "const $2 = useMemo(() => {",
-            "    return ($3)=> {",
+            "    return ($3) => {",
             "        $0",
             "    }",
             "}, [$1]);"
@@ -108,7 +108,7 @@
     "JSX_mapPrint": {
         "prefix": "mapPrint",
         "body": [
-            "{$1.map((elem,i)=> {",
+            "{$1.map((elem, i) => {",
             "    return (",
             "        <div key={elem.id}>",
             "            $0",
@@ -121,7 +121,7 @@
         "prefix": "map",
         "body": [
             "$1.map(elem=> {",
-            "   if (elem.id === $1){",
+            "   if (elem.id === $1) {",
             "       $0",
             "   }",
             "   return elem",
@@ -131,7 +131,7 @@
     "JSX_export_default": {
         "prefix": "ex",
         "body": [
-            "export default $0"
+            "export default $0;"
         ]
     },
     "JSX_prevent_default": {
@@ -158,15 +158,14 @@
             "import React, { useState, useEffect, useMemo, memo } from 'react';",
             "",
             "",
-            "function $1 ($2){",
-            "",
+            "function $1($2) {",
             "    return (",
             "        <div>",
             "            $0",
             "        </div>",
             "    )",
-            "}",
-
+            "};",
+            "",
             "export default $1 = memo($1);"
         ]
     },

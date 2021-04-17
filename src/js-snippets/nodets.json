@@ -110,7 +110,7 @@
     "Nodejs-appexpressRouter":{
         "prefix": "appRouter",
         "body": [
-           "const app = express.Router();"
+           "const router = express.Router();"
         ]
     },
     "Nodejs-schemaMongoose":{
@@ -122,40 +122,42 @@
            " ",
            "const userSchema = new Schema({",
            "    name:String,",
-           "    surname:String,$0",
+           "    surname:String",
+           "    $0",
            "});",
            " ",
-           "export const User = mongoose.model('User',userSchema)"
+           "export const User = mongoose.model('User', userSchema);"
         ]
     },
     "Nodejs-appListen":{
         "prefix": "appListen",
         "body": [
-          "app.listen(port,()=> console.log(`server running on http://localhost:port`))"
+          "app.listen(port, () => console.log(`server running on http://localhost:port`));"
         ]
     },
     "Nodejs-appPost":{
-        "prefix": "appPost",
+        "prefix": "routerRequest",
         "body": [
-          "app.post('/',async (req, res):Promise<void>=>{",
+          "router.$1('/$2', async (req, res):Promise<void> => {",
           "    try{",
           "        $0",
           "    } catch(err:any){",
-          "        console.log(err)",
+          "        console.log(err);",
+          "        res.send({message: 'error'})",
           "    }",
-          "})"
+          "});"
         ]
     },
     "Nodejs-module-exports":{
         "prefix": "mex",
         "body": [
-         "module.exports = $0;"
+            "module.exports = $0;"
         ]
     },
     "Nodejs-error-find":{
         "prefix": "err",
         "body": [
-         "(err:Error,data:$1):void=>{",
+         "(err:Error, data:$1):void => {",
          "    if(err) throw err",   
          "    $0",
          "}"
@@ -164,51 +166,49 @@
     "Nodejs-app.use":{
         "prefix": "use",
         "body": [
-        "app.use('/$1',require('$0'))"
+            "router.use('/$1', require('$0'))"
         ]
     },
     "Nodejs-fsfunc":{
         "prefix": "fsfunc",
         "body": [
-        "fs.$1(path.join(-dirname, './', '$0'))"
+            "fs.$1(path.join(__dirname, './', '$0'))"
         ]
     },
     "Nodejs-server":{
         "prefix": "server",
         "body": [
-            "import express from 'express';",
             "import dotenv from 'dotenv'",
             "dotenv.config();",
+            "import express from 'express';",
             "import morgan from 'morgan';",
             "import cors from 'cors'",
-            "import  { graphqlHTTP } from 'express-graphql';",
+            "import { graphqlHTTP } from 'express-graphql';",
             "import { client } from './model/postgres'",
             "import { schema } from './schema/schema';",
+            "import { sequelize } from './model/postgres';",
             "const app = express();",
-            "const port:string | number = process.env.port;",
+            "const port:string | number = process.env.PORT ?? 8888;",
             "",
             "",
-            "client.connect((err:Error):void=>{",
-            "    if(err) throw err",
-            "    console.log('postgresDB connected')",
-            "})",
+            "sequelize.authenticate().then(res => console.log('DB connected')).catch(err => console.log(err));",
             "",
             "",
-            "app.use(cors())",
+            "app.use(cors());",
             "app.use(morgan(`dev`));",
-            "app.use(express.json())",
+            "app.use(express.json());",
             "app.use(express.urlencoded({",
             "   extended: false",
-            "}))",
+            "}));",
             "",
             "app.use('/graphql',graphqlHTTP({",
             "    schema,",
             "    graphiql:true",
-            "}))",
+            "}));",
             "$0",
             "",
             "",
-            "app.listen(port, () => console.log(`server is runnig on port $1`));"
+            "app.listen(port, () => console.log(`server is runnig on http://localhost:$1`));"
         ]
     },
     "Nodejs-nodemailer":{
@@ -231,9 +231,11 @@
             "    },",
             ");",
             "",
-            "export const mailer= (message:):void => {",
-            "    transporter.sendMail(message,(err:Error):void => {",
-            "        if (err) console.log('email dont exist')",
+            "export const mailer = (message:):void => {",
+            "    transporter.sendMail(message, (err:Error):void => {",
+            "        if (err) {",
+            "            console.log('error to send email')",                   
+            "        };",
             "    });",
             "};"
         ]
@@ -242,29 +244,30 @@
         "prefix": "router",
         "body": [
             "import express from 'express';",
-            "const app = express.Router();",
+            "const router = express.Router();",
             "        ",
-            "app.post('/',async (req, res):Promise<void>=>{",
+            "router.post('/', async (req, res):Promise<void> => {",
             "    try{",
             "        $0",
             "    } catch(err:any){",
-            "        console.log(err)",
+            "        console.log(err);",
+            "        res.send({message:'error'})",
             "    }",
-            "})",
+            "});",
             "",
-            "module.exports = app;"
+            "module.exports = router;"
         ]
     },
     "Nodejs-bcrypt-compare":{
         "prefix": "comparebcrypt",
         "body": [
-            "const $1 = await bcrypt.compare($0,)"
+            "const $1 = await bcrypt.compare($0, );"
         ]
     },
     "Nodejs-bcrypt-hash":{
         "prefix": "hashbcrypt",
         "body": [
-            "const $1 = await bcrypt.hash($0,10)"
+            "const $1 = await bcrypt.hash($0, 10);"
         ]
     },
     "Nodejs-mysql":{
@@ -284,16 +287,16 @@
     "Nodejs-mysqlconnection":{
         "prefix": "mysqlconnection",
         "body": [
-            "conn.connect((err:Error):void=>{",
-            "    if(err) throw err",
-            "    console.log('mysqlDB connected')",
-            "})"
+            "conn.connect((err:Error):void => {",
+            "    if(err) throw err;",
+            "    console.log('mysqlDB connected');",
+            "});"
         ]
     },
     "Nodejs-querymysql":{
         "prefix": "mysqlquery",
         "body": [
-            "const $1 = await conn.query($0)"
+            "const $1 = await conn.query($0);"
         ]
     },
 
@@ -308,22 +311,86 @@
             "    port:5432,",
             "    host:'localhost',",
             "    user:'postgres',",
-            "})"
+            "});"
         ]
     },
     "Nodejs-postgresconnection":{
         "prefix": "postgresconnection",
         "body": [
-            "client.connect((err:Error):void=>{",
-            "    if(err) throw err",
-            "    console.log('postgresDB connected')",
-            "})"
+            "client.connect((err:Error):void => {",
+            "    if(err) throw err;",
+            "    console.log('postgresDB connected');",
+            "});"
         ]
     },
     "Nodejs-querypostgres":{
         "prefix": "postgresquery",
         "body": [
-            "const $1 = await client.query($0)"
+            "const $1 = await client.query($0);"
+        ]
+    },
+    "Nodejs-Sequelize":{
+        "prefix": "sqconnect",
+        "body": [
+            "import { Sequelize, DataTypes} from 'sequelize';",
+            "",
+            "",
+            "export const sequelize = new Sequelize(process.env.DBNAME,process.env.DBUSERNAME,process.env.DBPASSWORD,{",
+            "    host:'127.0.0.1',",
+            "    dialect:'$0'",
+            "});"
+        ]
+    },
+    "Nodejs-Sequelize-define":{
+        "prefix": "sqdefine",
+        "body": [
+            "export const $1 = sequelize.define('$2', {",
+            "    $0",
+            "});"
+        ]
+    },
+    "Nodejs-Sequelize-type":{
+        "prefix": "sqtype",
+        "body": [
+            "{",
+            "    type:DataTypes.$0",
+            "},"
+        ]
+    },
+    "Nodejs-Sequelize-findOne":{
+        "prefix": "sqfindOne",
+        "body": [
+            "let data: any = await $1.findOne({ where: { $0 } });"
+        ]
+    },
+    "Nodejs-Sequelize-update":{
+        "prefix": "squpdate",
+        "body": [
+            "await $1.update({$0}, {where:{});"
+        ]
+    },
+    "Nodejs-Sequelize-create":{
+        "prefix": "sqcreate",
+        "body": [
+            "await $1.create({$0});"
+        ]
+    },
+    "Nodejs-Sequelize-findAll":{
+        "prefix": "sqfindAll",
+        "body": [
+            "const data = await $0.findAll();"
+        ]
+    },
+    "Nodejs-Sequelize-destroy":{
+        "prefix": "sqdestroy",
+        "body": [
+            "await $1.destroy({where:{ $0 }});"
+        ]
+    },
+    "Nodejs-Response":{
+        "prefix": ".send",
+        "body": [
+            "res.send({message:\"$1\"})"
         ]
     }
 }

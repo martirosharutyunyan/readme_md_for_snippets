@@ -4,7 +4,7 @@
         "body": [
             "function $1($2) {",
             "    $0",
-            "}"
+            "};"
         ]
     },
     "Javascript_function_e":{
@@ -12,7 +12,7 @@
         "body": [
             "function $1(e) {",
             "    $0",
-            "}"
+            "};"
         ]
     },
     "Javascript_callback":{
@@ -20,7 +20,7 @@
         "body": [
            "const $1 = ($2) => {",
            "    $0",
-           "}"
+           "};"
         ]
     },
     "Javascript_callback_e":{
@@ -28,19 +28,19 @@
         "body": [
            "const $1 = e => {",
            "    $0",
-           "}"
+           "};"
         ]
     },
     "Javascript_callback_line":{
         "prefix": "cfl",
         "body": [
-           "const $1 = ($2) => $0"
+           "const $1 = ($2) => $0;"
         ]
     },
     "Javascript_callback_line_e":{
         "prefix": "cfle",
         "body": [
-           "const $1 = e => $0"
+           "const $1 = e => $0;"
         ]
     },
     "Javascript_callback_line_e_without_const_line":{
@@ -77,14 +77,14 @@
            "try {",
            "    $0",
            "} catch(err) {",
-           "    console.log(err)",
+           "    console.log(err);",
            "}"
         ]
     },
     "Javascript_return":{
         "prefix": "r",
         "body": [
-           "return $0"
+           "return $0;"
         ]
     },
     "Javascript_ternary":{
@@ -102,7 +102,7 @@
     "Javascript_JSON.stringify":{
         "prefix": "jsonstr",
         "body": [
-           "JSON.stringify($0,null,2)"
+           "JSON.stringify($0, null, 2)"
         ]
     },
     "Javascript_JSON.parse":{
