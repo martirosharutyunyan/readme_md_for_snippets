@@ -1,10 +1,11 @@
 const path = require('path');
-const { writeFile } = require('./promisify')
-exports.creatFiles = (data, langauge) => {
-    let array = []
-    for (const property in data) {
-        array = [...array,data[property]]
-    }
+const fs = require('fs').promises
+
+exports.createFiles = (data, langauge) => {
+    // let array = []
+    // for (const property in data) {
+    //     array = [...array, data[property]]
+    // }
     let ReadmeMd = {
         py:`
 # python-snippets
@@ -40,7 +41,7 @@ Keywords for easy working
         `
     }
     let str = '';
-    array.forEach(elem=>{
+    data.forEach(elem => {
         const length = elem.prefix.length
         let spaces = '';
         for (let i = 0; i < length + 5 ; i++) {
@@ -58,6 +59,5 @@ Keywords for easy working
         const data = `${elem.prefix} =>  ${body2}`
         str += '\n\n' + data
     })
-
-    writeFile(path.join(__dirname, `./${langauge}.txt`), `${ReadmeMd[langauge]}\n${str}\n\`\`\``)
+    return `${ReadmeMd[langauge]}\n${str}\n\`\`\``;
 };

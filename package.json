@@ -4,7 +4,7 @@
   "description": "",
   "main": "createMDfail.js",
   "scripts": {
-    "start": "nodemon src/getCode-Snippets.js",
+    "start": "node src/getCode-Snippets.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
