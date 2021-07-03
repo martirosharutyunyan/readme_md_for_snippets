@@ -1,6 +1,3 @@
-const path = require('path');
-const fs = require('fs').promises
-
 exports.createFiles = (data, langauge) => {
     // let array = []
     // for (const property in data) {
